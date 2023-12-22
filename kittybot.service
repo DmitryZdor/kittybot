@@ -1,0 +1,12 @@
+[Unit]
+Description=MyKittyBot
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/home/admin/kittybot/venv/bin/python /home/admin/kittybot/kittybot.py
+WorkingDirectory=/home/admin/kittybot/
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
