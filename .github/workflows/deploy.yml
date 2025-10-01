@@ -2,7 +2,7 @@ name: Deploy Bot
 
 on:
   push:
-    branches: [ main ]  # или другая ветка
+    branches: [ master ]  # или другая ветка
 
 jobs:
   deploy:
