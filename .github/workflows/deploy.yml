@@ -19,7 +19,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd ~/kittybot
-            git pull origin main
+            git pull origin master
             source venv/bin/activate
             pip install -r requirements.txt
             systemctl restart kittybot.service
