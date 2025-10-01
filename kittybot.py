@@ -51,7 +51,7 @@ def new(update, context):
     button = ReplyKeyboardMarkup([DATA], resize_keyboard=True)
     context.bot.send_message(
         chat_id=chat.id,
-        text=f'Привет, {name}. Посмотри, какого красавчика я тебе прислал',
+        text=f'Привет, {name}. Посмотри, какого красавчика я тебе нарыл',
         reply_markup=button
     )
 
