@@ -1,0 +1,25 @@
+name: Deploy Bot
+
+on:
+  push:
+    branches: [ main ]  # или другая ветка
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: admin
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd ~/kittybot
+            git pull origin main
+            source venv/bin/activate
+            pip install -r requirements.txt
+            systemctl restart kittybot.service
